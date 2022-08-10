@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View,FlatList } from 'react-native';
+import { StyleSheet, FlatList, View } from 'react-native';
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
 
-import AppNavigator from './AppNavigator';
-import TestIconItem from './components/IconSibaComponent';
-
-const AppContainer = createAppContainer(AppNavigator);
-
-export default class App extends React.Component {
+export default class IconSibaScreen extends React.Component {
 
   render() {
+    const { items } = this.state
     return (
-      <AppContainer />
+        <View style={styles.containerApp}>
+          List Icon
+        </View>
     );
   }
 }
