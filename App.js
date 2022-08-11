@@ -1,21 +1,27 @@
-import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View,FlatList } from 'react-native';
-import React from 'react';
-import { createAppContainer } from 'react-navigation';
+import * as React from 'react';
+import { View, Text,StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from "./screens/HomeScreen";
+import DetailsScreen from "./screens/DetailsScreen";
+import TestScreen from "./screens/TestScreen";
 
-import AppNavigator from './AppNavigator';
-import TestIconItem from './components/IconSibaComponent';
 
-const AppContainer = createAppContainer(AppNavigator);
+const Stack = createNativeStackNavigator();
 
-export default class App extends React.Component {
-
-  render() {
-    return (
-      <AppContainer />
-    );
-  }
+function AppNavigator() {
+  return (
+      <NavigationContainer>
+          <Stack.Navigator initialRouteName="Home">
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="Details" component={DetailsScreen} />
+              <Stack.Screen name="Test" component={TestScreen} />
+          </Stack.Navigator>
+      </NavigationContainer>
+  );
 }
+
+export default AppNavigator;
 
 const styles = StyleSheet.create({
   containerApp: {

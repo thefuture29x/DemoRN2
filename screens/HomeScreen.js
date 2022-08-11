@@ -1,25 +1,23 @@
-import { StyleSheet, FlatList, View , Text} from 'react-native';
-import React from 'react';
+import * as React from 'react';
+import { Button, View, Text, StyleSheet } from 'react-native';
 
-export default class IconSibaScreens extends React.Component {
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title: navigation.getParam('itemName', 'None'),
-      headerStyle: {
-        backgroundColor: 'pink'
-      },
-    };
-  };
-
-  render() {
-    return (
-        <View style={styles.containerApp}>
-          <Text>Ahihi Phong</Text>
-        </View>
-    );
-  }
+function HomeScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
+      <Button
+        title="Go to Test"
+        onPress={() => navigation.navigate('Test')}
+      />
+    </View>
+  );
 }
 
+export default HomeScreen
 const styles = StyleSheet.create({
   containerApp: {
     flex: 1,

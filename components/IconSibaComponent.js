@@ -12,13 +12,11 @@ import HappyImage from '../assets/happy.png'
 
 
 export default function TestIconItem(props) {
-    const { item } = props;
+    const { item, onPress } = props;
     return (
         <TouchableOpacity 
         activeOpacity={0.5}
-        onPress={() => {
-            Alert.alert('Woooo');
-        }}>
+        onPress={onPress}>
             <View style={[styles.container, styles.shadowProp]}>
                 <Text style={styles.title}>
                     {item.name}
